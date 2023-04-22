@@ -43,7 +43,7 @@ export const News: FC<Props> = ({
   };
 
   return (
-    <article className="container_news" onClick={(e) => newTab(story_url)}>
+    <article className="container_news" onClick={() => newTab(story_url)}>
       <div className="news_info">
         <div className="news_info_title">
           <span>
