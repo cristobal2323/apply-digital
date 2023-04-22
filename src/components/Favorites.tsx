@@ -1,26 +1,16 @@
 import { FC } from "react";
-import { Hit, IFavorite } from "../interfaces";
+import { IFavorite } from "../interfaces";
 import { News } from "./News";
 
 interface Props {
-  news: Hit[];
   likedNews: IFavorite[];
   setLikedNews: (favorites: IFavorite[]) => void;
 }
 
-export const Main: FC<Props> = ({ news, setLikedNews, likedNews }) => {
-  if (!news) {
-    return null;
-  }
-  console.log(news);
+export const Favorites: FC<Props> = ({ likedNews, setLikedNews }) => {
   return (
     <main className="container mt-1 flex gap-1">
-      {news.map((item: Hit, i: number) => {
-        const isLiked = likedNews.some(
-          (element: IFavorite) =>
-            element.story_id === item.story_id && element.author === item.author
-        );
-
+      {likedNews.map((item: IFavorite, i: number) => {
         if (
           item.story_id &&
           item.story_title &&
@@ -30,7 +20,7 @@ export const Main: FC<Props> = ({ news, setLikedNews, likedNews }) => {
         ) {
           return (
             <News
-              isLiked={isLiked}
+              isLiked={true}
               setLikedNews={setLikedNews}
               key={i}
               story_id={item.story_id}

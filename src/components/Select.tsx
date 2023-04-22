@@ -7,10 +7,13 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import Angular from "../assets/angular.png";
 import React from "../assets/react.png";
 import Vue from "../assets/vue.png";
+import { Hit } from "../interfaces";
 
 interface Props {
   query: string;
   setQuery: (query: string) => void;
+  setAllData: (array: Hit[]) => void;
+  setPage: (page: number) => void;
 }
 
 const imgs: { angular: string; react: string; vue: string } = {
@@ -19,7 +22,14 @@ const imgs: { angular: string; react: string; vue: string } = {
   vue: Vue,
 };
 
-export const Select: FC<Props> = ({ setQuery, query }) => {
+export const Select: FC<Props> = ({ setQuery, setAllData, setPage, query }) => {
+  const filter = (selectedQuery: string) => {
+    localStorage.setItem("query", selectedQuery);
+    setQuery(selectedQuery);
+    setAllData([]);
+    setPage(0);
+  };
+
   return (
     <section className="container mt-1">
       <div className="container_select">
@@ -47,7 +57,9 @@ export const Select: FC<Props> = ({ setQuery, query }) => {
         <div className="items_select">
           <ul>
             <li
-              onClick={() => setQuery("angular")}
+              onClick={() => {
+                filter("angular");
+              }}
               className={query === "angular" ? "active" : ""}
             >
               <div>
@@ -56,7 +68,9 @@ export const Select: FC<Props> = ({ setQuery, query }) => {
               <div>Angular</div>
             </li>
             <li
-              onClick={() => setQuery("react")}
+              onClick={() => {
+                filter("react");
+              }}
               className={query === "react" ? "active" : ""}
             >
               <div>
@@ -65,7 +79,9 @@ export const Select: FC<Props> = ({ setQuery, query }) => {
               <div>React</div>
             </li>
             <li
-              onClick={() => setQuery("vue")}
+              onClick={() => {
+                filter("vue");
+              }}
               className={query === "vue" ? "active" : ""}
             >
               <div>

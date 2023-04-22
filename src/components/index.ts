@@ -4,3 +4,4 @@ export * from "./Select";
 export * from "./News";
 export * from "./Main";
 export * from "./Loading";
+export * from "./Favorites";

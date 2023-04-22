@@ -5,8 +5,6 @@ import type { PreloadedState } from "@reduxjs/toolkit";
 //Service
 import { newsApi } from "./services/news";
 
-console.debug(newsApi.reducer);
-
 const rootReducer = combineReducers({
   [newsApi.reducerPath]: newsApi.reducer,
 });
