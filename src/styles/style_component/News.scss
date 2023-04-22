@@ -5,6 +5,9 @@
   border-radius: 2px;
   display: flex;
   align-items: center;
+  @include respond-to(tabletPhone) {
+    width: 100%;
+  }
   &:hover {
     opacity: 0.5;
     cursor: pointer;

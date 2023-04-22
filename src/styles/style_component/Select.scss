@@ -15,6 +15,11 @@
   span {
     color: $color-dark;
     font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 5px;
+    }
     &.select_icon {
       position: absolute;
       right: 5px;
