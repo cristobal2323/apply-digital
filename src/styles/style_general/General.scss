@@ -1,0 +1,23 @@
+.container {
+  width: 80%;
+  margin: auto;
+  @include respond-to(tabletPhone) {
+    width: 90%;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.gap-1 {
+  gap: 1rem;
+}
+
+.flex_center {
+  justify-content: center;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}

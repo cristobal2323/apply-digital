@@ -1,0 +1,29 @@
+.tabs {
+  min-width: 120px;
+  .tab_button {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid $color-gray-dark;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+    color: $color-dark;
+    font-size: 1rem;
+    font-family: "Roboto";
+    border-radius: 2px;
+    &:hover {
+      background-color: lighten($color-gray-dark, $amount: 5%);
+    }
+    &.active_right {
+      color: $color-blue;
+      border: 1px solid $color-blue;
+      border-left: 0;
+    }
+    &.active_left {
+      color: $color-blue;
+      border: 1px solid $color-blue;
+      border-right: 0;
+    }
+  }
+}
