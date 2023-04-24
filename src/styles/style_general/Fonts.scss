@@ -4,6 +4,7 @@ $roboto-font-italic-path: "../fonts/Roboto-Italic/";
 
 @font-face {
   font-family: "Roboto-Regular";
+  src: url($roboto-font-regular-path + "Roboto-Regular.ttf") format("truetype");
   src: url($roboto-font-regular-path + "Roboto-Regular.eot");
   src: url($roboto-font-regular-path + "Roboto-Regular.eot?#iefix")
       format("embedded-opentype"),
@@ -16,12 +17,10 @@ $roboto-font-italic-path: "../fonts/Roboto-Italic/";
 
 @font-face {
   font-family: "Roboto-Bold";
+  src: url($roboto-font-bold-path + "Roboto-Bold.ttf") format("truetype");
   src: url($roboto-font-bold-path + "Roboto-Bold.eot");
   src: url($roboto-font-bold-path + "Roboto-Bold.eot?#iefix")
       format("embedded-opentype"),
-    url($roboto-font-bold-path + "Roboto-Bold.woff2") format("woff2"),
-    url($roboto-font-bold-path + "Roboto-Bold.woff") format("woff"),
-    url($roboto-font-bold-path + "Roboto-Bold.ttf") format("truetype"),
     url($roboto-font-bold-path + "Roboto-Bold.svg#Roboto-Bold") format("svg");
   font-weight: bold;
   font-style: normal;

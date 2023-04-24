@@ -12,7 +12,7 @@ export const Main: FC<Props> = ({ news, setLikedNews, likedNews }) => {
   if (!news) {
     return null;
   }
-  console.log(news);
+
   return (
     <main className="container mt-1 flex gap-1">
       {news.map((item: Hit, i: number) => {
